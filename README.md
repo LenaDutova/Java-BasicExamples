@@ -19,11 +19,13 @@ Object-Oriented Programming example:
 - Bone, Milk, Mouse - child class of Food, which animals can eat
 
 # collections package
-java.util
-- Person - simple data class with name & lastname
-- ArraysExample - using arrays with class Arrays
-- ListExamples - using a dynamic lists (interface List) with class instances of ArrayList and LinkedList
-- SetExample - using a dynamic set of unique elements (interface Set) with class instances of HashSet and TreeSet
+Person is simple data class (with name & lastname) for collection examples: 
+- ArraysExample - using arrays with class Arrays (imitates interface java.util.Collection)
+- ListExamples - using a dynamic lists (implement interface java.util.Collection) with class instances of ArrayList and LinkedList
+- SetExample - using a dynamic set of unique elements (implement interface java.util.Collection) with class instances of HashSet and TreeSet
+- MapExample - using a dynamic maps of pairs key-value (Map use object of interface java.util.Collection) with class instances of HashMap and TreeMap
+- IteratorExample - enumeration of all collection values
+
 
 
 

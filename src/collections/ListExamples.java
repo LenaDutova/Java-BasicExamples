@@ -6,8 +6,8 @@ import java.util.*;
  * Пример работы со списками данных
  *
  * Экземпляр класса List создать нельзя,
- * но можно создать списки,
- * соответствующие его дочерним классам
+ * но можно создать список,
+ * соответствующий его дочерним классам
  */
 public class ListExamples {
     public static void main(String[] args) {
@@ -57,7 +57,7 @@ public class ListExamples {
             А метод isEmpty() уточняет, есть ли элементы в списке
          */
         System.out.println("List length = " + list.size());
-        System.out.println("Is Empty = " + list.isEmpty());
+        System.out.println("List is empty = " + list.isEmpty());
         System.out.println();
 
         // endregion

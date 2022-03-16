@@ -1,6 +1,5 @@
 package collections;
 
-
 import java.util.Comparator;
 import java.util.Objects;
 
@@ -80,7 +79,7 @@ public class Person
 
     /**
      * Сигнатура и логика метода идентична тому,
-     * что мы переписали для класса Comparator
+     * что мы переписали для класса {@link Comparator}
      *
      * В данном случае сортируем по фамилии
      *
@@ -91,6 +90,10 @@ public class Person
      */
     public static int compareFromLastName(Object one, Object another) {
         return ((Person)one).lastname.compareTo(((Person) another).lastname);
+    }
+
+    public static int compareFromId(Object one, Object another) {
+        return ((Integer)another) - ((Integer)one);
     }
 
     // endregion
