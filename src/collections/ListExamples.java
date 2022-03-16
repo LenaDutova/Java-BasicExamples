@@ -232,5 +232,4 @@ public class ListExamples {
         linkedList.clear();
         return linkedList;
     }
-
 }

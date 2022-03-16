@@ -2,6 +2,7 @@ package oop;
 
 import oop.animals.Animal;
 import oop.animals.Cat;
+import oop.foods.Bone;
 import oop.foods.Food;
 import oop.foods.Milk;
 
@@ -64,15 +65,19 @@ public class ObjectOrientedExample {
         Animal kitty = new Cat(true, 3, 8);
         Animal femaleCat = new Cat(true, 3, 8);
 
-        Animal cat = new Cat(false, 5, 1);
+        Cat cat = new Cat(false, 5, 1);
         System.out.println(cat.toString());
 
 //        cat.eat(new Food (2));  // error - incorrect food
+//        kitty.eat(new Bone());   // error - incorrect food
+        kitty.eat(new Bone()); // Но козу можно покормить костями, т.к. она не привередлива
 
         Food milk = new Milk();
         cat.eat(milk);
         System.out.println(milk.toString());
         System.out.println(cat.toString());
+
+        cat.voice();
 
         Animal kitten;
 

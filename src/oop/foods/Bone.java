@@ -8,7 +8,7 @@ public class Bone
 
     private static final int SATIETY = 4;
 
-    protected Bone() {
+    public Bone() {
         super(SATIETY);
     }
 

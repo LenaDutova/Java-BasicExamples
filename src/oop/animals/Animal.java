@@ -8,7 +8,9 @@ import java.util.Objects;
 /**
  * Родительский класс Животных
  */
-public class Animal {
+public class Animal
+    implements ICreatable<Animal>{
+
     private static final int MAX_AGE = 15;
     private static final int MAX_SATIETY = 5;
 
@@ -16,7 +18,7 @@ public class Animal {
     protected String name;      // наименование животного
     protected boolean gender;   // пол
     protected int age;          // возраст
-    protected int fullFed;      // сытость
+    protected int satiety;      // сытость
 
     // служебные свойства не доступные даже дочерним классам
     private int maxAge;         // отмеренный животному срок жизни
@@ -44,7 +46,7 @@ public class Animal {
         this.maxSatiety = ObjectOrientedExample.random.nextInt(MAX_SATIETY) + MAX_SATIETY;// 5 - 10
 
         // По умолчанию, животное уже покушало
-        this.fullFed = maxSatiety;
+        this.satiety = maxSatiety;
     }
 
     /*
@@ -69,7 +71,7 @@ public class Animal {
     public Animal(String name, boolean gender, int age, int hungry) {
         this(name, gender);
         this.setAge(age);
-        this.setFullFed(hungry);
+        this.setSatiety(hungry);
     }
 
     // endregion
@@ -111,11 +113,11 @@ public class Animal {
 
     }
 
-    public void setFullFed(int fullFed) {
-        if (fullFed < 0)
+    public void setSatiety(int satiety) {
+        if (satiety < 0)
             throw new Error("Сытость не может быть отрицательной");
         else {
-            this.fullFed = (fullFed < maxSatiety) ? fullFed : maxSatiety;
+            this.satiety = (satiety < maxSatiety) ? satiety : maxSatiety;
         }
     }
 
@@ -139,8 +141,8 @@ public class Animal {
         return age;
     }
 
-    public int getFullFed() {
-        return fullFed;
+    public int getSatiety() {
+        return satiety;
     }
 
     public boolean isGender() {
@@ -156,11 +158,11 @@ public class Animal {
     }
 
     public boolean isHungry (){
-        return fullFed == 0;
+        return satiety == 0;
     }
 
     public boolean isWellFed (){
-        return fullFed == maxSatiety;
+        return satiety == maxSatiety;
     }
 
     public String getGender (){
@@ -199,9 +201,11 @@ public class Animal {
      * при наличии двух особей разного пола.
      * Одну особь представляет экземпляр класса,
      * на котором вызывается метод
+     *
      * @param animal - вторая особь передается в качестве аргумента метода
      * @return - новое животное, полученное в результате скрешивания
      */
+    @Override
     public Animal creation (Animal animal){
         if (this == animal)
             throw new Error("Необходима пара");
@@ -225,7 +229,7 @@ public class Animal {
             System.out.println("Zzz... Zzz... Zzz...");
             return false;
         } else{
-            this.fullFed--;
+            this.satiety--;
             System.out.println("I like to move it, move it!");
             return true;
         }
@@ -239,8 +243,8 @@ public class Animal {
     public boolean eat(Food food){
         if (isWellFed() || food.isUsed()) return false;
         else {
-            int hungry = maxSatiety - fullFed;
-            this.fullFed += food.eatFood(hungry);
+            int hungry = maxSatiety - satiety;
+            this.satiety += food.eatFood(hungry);
             return true;
         }
     }
@@ -260,7 +264,7 @@ public class Animal {
                 "name='" + name + '\'' +
                 ", gender='" + getGender() + '\'' +
                 ", age=" + age +
-                ", hungry=" + fullFed +
+                ", hungry=" + satiety +
                 (isDied() ? ", RIP" : "") +
                 ']';
     }

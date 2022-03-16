@@ -5,25 +5,25 @@ package oop.foods;
  */
 public class Food {
 
-    private int satiety;
+    private int calories;
 
-    public Food(int satiety) {
-        if (satiety < 1)
+    public Food(int calories) {
+        if (calories < 1)
             throw new Error("Что ж это за еда, если ее есть бесполезно?");
-        this.satiety = satiety;
+        this.calories = calories;
     }
 
     public boolean isUsed() {
-        return satiety == 0;
+        return calories == 0;
     }
 
     public int eatFood(int hungry) {
-        if (hungry < satiety){
-            this.satiety -= hungry;
+        if (hungry < calories){
+            this.calories -= hungry;
         } else {
             // уточним, сколько сможем съесть
-            hungry = satiety;
-            this.satiety = 0;
+            hungry = calories;
+            this.calories = 0;
         }
         return hungry;
     }
@@ -31,7 +31,7 @@ public class Food {
     @Override
     public String toString() {
         return "[" +
-                "satiety=" + satiety +
+                "calories=" + calories +
                 (isUsed() ? ", USED" : "") +
                 ']';
     }

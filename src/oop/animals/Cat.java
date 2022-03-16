@@ -25,6 +25,8 @@ public class Cat
         super("Cat", gender, age, hungry);
     }
 
+    // region // override parent methods
+
     /**
      * Метод уточняет,
      * что вторая особь тоже котик,
@@ -55,4 +57,16 @@ public class Cat
             return super.eat(food);
         else throw new Error("Котики этого не кушают");
     }
+
+    // endregion
+    // region // add custom behavior method
+
+    /**
+     * Котики мурчат
+     */
+    public void voice(){
+        System.out.println("Мур-мур-мур");
+    }
+
+    // endregion
 }

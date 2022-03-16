@@ -1,6 +1,5 @@
 package collections;
 
-import com.sun.istack.internal.NotNull;
 
 import java.util.Comparator;
 import java.util.Objects;
@@ -16,7 +15,7 @@ public class Person
 
     public Person() {}
 
-    public Person(@NotNull String name, @NotNull String lastname) {
+    public Person(String name, String lastname) {
         this.id = ++count;
         this.name = name;
         this.lastname = lastname;
