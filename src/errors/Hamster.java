@@ -5,7 +5,7 @@ package errors;
  */
 public class Hamster {
 
-    public static final String[] breeds = {
+    private static final String[] breeds = {
             "Обыкновенный",
             "Джунгарский",
             "Русский карликовый"
@@ -31,7 +31,7 @@ public class Hamster {
 
     public void setNickname(String nickname)
             throws EmptyArgumentException {
-        if (nickname == null || nickname.isBlank())
+        if (nickname == null || nickname.isEmpty())
             throw new EmptyArgumentException("nickname");
         this.nickname = nickname;
     }
@@ -77,10 +77,11 @@ public class Hamster {
     }
 
     private String getYearStr (){
-        return switch (age % 10){
-            case 1 -> "год";
-            case 2 -> "года";
-            default -> "лет";
-        };
+        switch (age % 10){
+            case 1 :
+                return "год";
+            default :
+                return "года";
+        }
     }
 }

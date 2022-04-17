@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ErrorsExample {
-
     private static Scanner scanner = new Scanner(System.in);
     private static List<Hamster> hamsters = new ArrayList<>();
 
@@ -33,6 +32,7 @@ public class ErrorsExample {
                     );
             hamsters.add(hamster);
         } catch (NumberArgumentException e) {
+            // От более "частных" ошибок
             // ошибки при вводе чисел
             System.out.println(e);
         } catch (EmptyArgumentException e) {
@@ -42,8 +42,13 @@ public class ErrorsExample {
             // неправильно указанная порода хомячка
             System.out.println(e);
         } catch (Exception e) {
+            // К наиболее "объемным" ошибкам
             // ошибки при чтении строки с консоли: неверный порядок, недостаточно аргументов
             System.out.println(e.getMessage());
+        }
+        finally {
+            // выполняется и если ошибка выпала, и если ошибок не было
+            System.out.printf("try create a hamster");
         }
     }
 }
