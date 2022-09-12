@@ -1,4 +1,4 @@
-package examples;
+package loops;
 
 public class CycleExample {
     public static void main(String[] args) {

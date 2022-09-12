@@ -1,4 +1,4 @@
-package examples;
+package forks;
 
 import java.util.Scanner;
 
@@ -7,6 +7,7 @@ public class SwitchExample {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        // Базовая нотация
         // Название дня недели по его номеру
         System.out.println("Введите день недели:");
         int day = scanner.nextInt();
@@ -67,21 +68,21 @@ public class SwitchExample {
                 Project SDK - openjdk-17 или скачать такую через команду "Add jdk"
                 Project language level - Default sdk
          */
-//        String label = switch (day) {
-//            case 6 -> "Суббота";
-//            case 1, 2, 3, 4, 5 -> "День рабочей недели";
-//            case 7 -> {
-//                // несколько инструкций можно также исполнять в кейсе
-//                System.out.println("Как же быстро пролетают выходные :(");
-//                /*
-//                    в этом случае возвращение значения
-//                    откладывается оператором yield
-//                    до выполнения предшествующего кода блока
-//                 */
-//                yield "Воскресенье";
-//            }
-//            default -> "Неделя состоит из 7 дней";
-//        };
-//        System.out.println(label);
+        String label = switch (day) {
+            case 6 -> "Суббота";
+            case 1, 2, 3, 4, 5 -> "День рабочей недели";
+            case 7 -> {
+                // несколько инструкций можно также исполнять в кейсе
+                System.out.println("Как же быстро пролетают выходные :(");
+                /*
+                    в этом случае возвращение значения
+                    откладывается оператором yield
+                    до выполнения предшествующего кода блока
+                 */
+                yield "Воскресенье";
+            }
+            default -> "Неделя состоит из 7 дней";
+        };
+        System.out.println(label);
     }
 }

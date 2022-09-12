@@ -1,6 +1,6 @@
-package examples;
+package basic;
 
-public class DataTypesExample {
+public class ArithmeticExample {
     public static void main(String[] args) {
 
         /**
@@ -180,7 +180,7 @@ public class DataTypesExample {
 
         /*
             Math.floor(), Math.ceil() - хотя и округляют до целого, возвращают дробное число;
-            Math.round() - не только округляет, но и возращает целочисленное значение
+            Math.round() - не только округляет, но и возвращает целочисленное значение
          */
 
         // Модуль числа - возвращает значение такого же типа

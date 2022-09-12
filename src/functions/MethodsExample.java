@@ -1,4 +1,4 @@
-package examples;
+package functions;
 
 public class MethodsExample {
 
