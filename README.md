@@ -1,4 +1,4 @@
-# JavaPractice
+# JavaBasicPractice
 
 # examples package
 Simple examples of using basic Java language constructs:
